@@ -1,0 +1,91 @@
+
+
+<div class="container-fluid" style="overflow: auto;">
+  <!-- Sidebar -->
+  <div class="d-flex" id="wrapper"  style="margin-top: 70px">
+    <!-- Sidebar Menu -->
+    <div id="sidebar"  style="background-color:  white;overflow: auto;padding-right: 0;" [ngClass]="{ 'toggled': isMenuOpen, }" class="sidebarmymenu sidebarstyle">
+<!--      <div class="sidebar-header">-->
+<!--        <button class="btn btn-primary" (click)="toggleMenu()">-->
+<!--          <i class="bi bi-list"></i><mat-icon>close</mat-icon>-->
+<!--        </button>-->
+<!--      </div>-->
+      <ul class="nav flex-column">
+        <li class="nav-item" style="display: none">
+          <a class="nav-link" (click)="toggleDropdown(10)" href="#">admin<i class="bi bi-caret-down-fill"></i></a>
+          <ul *ngIf="isDropdownOpen" class="nav flex-column ms-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#">my profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">change password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><button>logout</button></a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hov" (click)="toggleDropdown(1)"><mat-icon style="position: relative;top: 6px;" class="user">supervised_user_circle</mat-icon><span class="user"> Users </span> <span class="material-icons user" style="position: relative;top: 6px;float: right">arrow_drop_down</span><i class="bi bi-caret-down-fill"></i></a>
+          <ul *ngIf="userDropdown" class="nav flex-column ms-3">
+            <li class="nav-item">
+              <a class="nav-link hov"  routerLink="/parent">
+                <span class="user">All Users</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hov"><span class="user">Create User</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hov" (click)="toggleDropdown(2)"><span class="material-icons user" style="position: relative;top: 6px;">confirmation_number</span><span class="user">Tickets </span><span class="material-icons user" style="float: right">arrow_drop_down</span><i class="bi bi-caret-down-fill"></i></a>
+          <ul *ngIf="ticketsDropdown" class="nav flex-column ms-3">
+            <li class="nav-item">
+              <a class="nav-link hov"><span class="user">All Tickets</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hov"><span class="user">Assigned Tickets</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hov"><span class="user">Create Tickets</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hov" (click)="toggleDropdown(3)"><i class="fas fa-file user"></i><span class="user">SLA</span> <span class="material-icons user" style="float: right">arrow_drop_down</span><i class="bi bi-caret-down-fill"></i></a>
+          <ul *ngIf="slaDropdown" class="nav flex-column ms-3">
+            <li class="nav-item">
+              <a class="nav-link hov"><span class="user">All SLA</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hov"><span class="user">My SLA</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hov"><span class="user">Create SLA</span></a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hov"><span class="user">Reports</span></a>
+        </li>
+        <li class="nav-item" style="visibility: hidden">
+          <a class="nav-link hov"><span class="user"></span></a>
+        </li>
+        <li class="nav-item" style="visibility: hidden">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="page-content-wrapper">
+      <button class="btn btn-primary clsbtn" (click)="toggleMenu()" style="position: absolute;top: 20px;left:175px;background-color: transparent;border: none">
+        <i class="bi bi-list"></i><mat-icon>view_headline</mat-icon>
+      </button>
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+

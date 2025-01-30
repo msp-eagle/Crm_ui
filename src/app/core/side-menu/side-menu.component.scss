@@ -1,0 +1,156 @@
+//#wrapper {
+//  display: flex;
+//}
+//
+//#sidebar {
+//  width: 250px;
+//  height: 100vh;
+//  position: fixed;
+//  top: 0;
+//  left: -250px;
+//  transition: all 0.3s ease;
+//}
+//
+//#sidebar.toggled {
+//  left: 0;
+//}
+//
+//#page-content-wrapper {
+//  margin-left: 0;
+//  transition: margin-left 0.3s ease;
+//}
+//
+//#sidebar.toggled + #page-content-wrapper {
+//  margin-left: 250px;
+//}
+//
+//.sidebar-header {
+//  padding: 20px;
+//  background-color: #343a40;
+//  color: white;
+//}
+//
+//.list-group-item {
+//  cursor: pointer;
+//}
+//
+//.list-group-item:hover {
+//  background-color: #f8f9fa;
+//}
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Layout */
+.container-fluid {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styles */
+#sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+#sidebar.toggled {
+  left: -250px;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-header button {
+  background-color: #343a40;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.sidebar-header button i {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: white !important;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: #575757;
+}
+
+.ms-3 {
+  margin-left: 1rem;
+}
+
+#page-content-wrapper {
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px); /* Take up the remaining space */
+}
+
+#sidebar.toggled + #page-content-wrapper {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    width: 200px;
+  }
+
+  #page-content-wrapper {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+.clsbtn{
+  display: none;
+}
+@media(max-width: 716px) {
+  #page-content-wrapper{
+    margin-left: 0;
+    width: calc(100% - 200px);
+  }
+  .clsbtn{
+    display: block;
+  }
+
+}
+
+.user{
+  font-weight: bold;
+  color: #444444;
+}
+.hov:hover {
+  background-color: #1f4380;
+  .user{
+    color: white;
+  }
+}
+
+
+
+.sidebarstyle{
+  padding-left: 0;
+  border-right: 1px solid rgba(200, 200, 200, 0.9);
+}

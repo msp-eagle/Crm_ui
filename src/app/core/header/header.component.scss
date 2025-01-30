@@ -1,0 +1,75 @@
+.mat-container--header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  background-color: #1f4380;
+}
+
+.header--logo1 {
+  /*// vertical-align: middle;
+   cursor: pointer;*/
+  height: 50%;
+  width: 28%;
+  margin-left: 15px;
+}
+@media(max-width: 716px){
+  .header--logo1 {
+    width: 23%;
+  }
+}
+
+.btn1 {
+  background-color: #b9bdbd;
+  color: white;
+  font-weight: bold;
+}
+
+.header--logo {  vertical-align: middle;
+  cursor: pointer;
+  /* UX enhancement */
+  /* padding-left: 4%;*/
+  /*background-color: white;*/
+  /* UX enhancement end */
+}
+
+.mat-headr {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  height: 70px;
+}
+
+/*// .glyphicon{*/
+/*   //   color: white;*/
+/*   //   padding-right: 50px;*/
+/*   // }*/
+button {
+  /*margin-right: 80px;*/
+  position: absolute;
+  right: 20px;
+}
+.row{
+  display: inline-flex;
+}
+.mat-badge-content {
+  width: auto;
+  display: grid;
+  min-width: 32px;
+  min-height: 28px;
+  text-align: center;
+  align-items: center;
+  padding: 5px 3px;
+  top: -20px;
+  right: -22px;
+}
+
+
+button#dropdownMenuButton1{
+  position: absolute;
+  bottom: -21px;
+}
