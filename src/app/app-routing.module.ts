@@ -4,7 +4,7 @@ import {ReportsComponent} from './reports/reports.component';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 
-const routes: Routes = [{path: 'reports',component:ReportsComponent},
+const routes: Routes = [{path: 'home/reports',component:ReportsComponent},
   {path: 'home',component:HomeComponent}];
 
 @NgModule({
