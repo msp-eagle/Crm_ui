@@ -1,0 +1,108 @@
+<div class="container mt-5">
+  <h3>Ticket List</h3>
+  <form (ngSubmit)="applyFilters()" class="mb-4">
+
+    <!-- Filter Form -->
+    <div class="row">
+
+    <div class="col-md-3">
+      <label for="filterStatus">Filter by Status:</label>
+      <select [(ngModel)]="filterStatus" id="filterStatus" name="filterStatus" class="form-control">
+        <option value="">All</option>
+        <option value="Open">Open</option>
+        <option value="Resolved">Resolved</option>
+        <option value="In Progress">In Progress</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label for="filterAssignedTo">Filter by Assigned To:</label>
+      <input [(ngModel)]="filterAssignedTo" type="text" id="filterAssignedTo" name="assignedto" class="form-control" placeholder="Assigned To">
+    </div>
+
+    <div class="col-md-3">
+      <label for="filterPriority">Filter by Priority:</label>
+      <select [(ngModel)]="filterPriority" id="filterPriority" name="priority" class="form-control">
+        <option value="">All</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label for="filterFromDate">From Date:</label>
+      <input [(ngModel)]="filterFromDate" type="date" id="filterFromDate" name="fromdate" class="form-control">
+    </div>
+
+    <div class="col-md-3">
+      <label for="filterToDate">To Date:</label>
+      <input [(ngModel)]="filterToDate" type="date" id="filterToDate" name="todate" class="form-control">
+    </div>
+  </div>
+
+
+  </form>
+  <div class="row">
+    <div class="col-md-3" style="padding-left: 20px; padding-top: 20px">
+      <button  class="btn btn-primary">Apply Filters</button>
+    </div>
+  </div>
+  <!-- Rows per page dropdown -->
+  <div class="mb-3">
+    <label for="rowsPerPage">Rows per page:</label>
+    <select [(ngModel)]="itemsPerPage" id="rowsPerPage" class="form-control" (change)="updatePagination()">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <!-- Download PDF Button -->
+    <button (click)="downloadPDF()" class="btn btn-success mt-3">Download PDF</button>
+
+  </div>
+  <!-- Bootstrap Table -->
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th (click)="sortData('ticketId')">Ticket ID</th>
+      <th (click)="sortData('subject')">Subject</th>
+      <th (click)="sortData('status')">Status</th>
+      <th (click)="sortData('priority')">Priority</th>
+      <th (click)="sortData('assignedto')">Assigned To</th>
+      <th (click)="sortData('createdDateTime')">Created Date Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ticket of paginatedTickets">
+      <td>{{ ticket.ticketId }}</td>
+      <td>{{ ticket.subject }}</td>
+      <td>{{ ticket.status }}</td>
+      <td>{{ ticket.priority }}</td>
+      <td>{{ ticket.assignedto }}</td>
+      <td>{{ ticket.createdDateTime | date: 'short' }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <nav *ngIf="totalPages > 1">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="changePage(currentPage - 1)">Previous</button>
+      </li>
+
+      <li *ngFor="let page of pages" class="page-item" [class.active]="page === currentPage">
+        <button class="page-link" (click)="changePage(page)">{{ page }}</button>
+      </li>
+
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link" (click)="changePage(currentPage + 1)">Next</button>
+      </li>
+    </ul>
+  </nav>
+</div>
