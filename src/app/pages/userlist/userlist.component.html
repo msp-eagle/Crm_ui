@@ -1,0 +1,129 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body table-responsive">
+          <!-- Admin Section (only for admin) -->
+
+            <h3 class="mt-0 header-title uppercase"> User List</h3><br>
+            <table class="table table-bordered table-bordered dt-responsive nowrap">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Status</th>
+                <th>Role</th>
+                <th *ngIf="sessionStorage.getItem('roleName') == 'ROLE_SUPER_ADMIN'">Head</th>
+                <th>Show</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let profile of content, let i= index">
+                <td>{{ i+1 }}</td>
+                <td>{{ profile.email }}</td>
+                <td>{{ profile.username }}</td>
+                <td>{{ profile.status| uppercase }}</td>
+                <td>{{ profile.roles?.[0]?.name || 'No Role' | uppercase}}</td>
+
+                <!-- View Action -->
+                <td *ngIf="sessionStorage.getItem('roleName') == 'ROLE_SUPER_ADMIN'" style="white-space: nowrap; width: 1%;">
+                  <div  class="btn-group btn-group-sm" style="float: none;">
+                    <button type="button" (click)="memberView(profile.id,profile.roles?.[0]?.name)" class="tabledit-edit-button btn btn-success" style="float: none;">
+                      <span class="mdi mdi-pencil">Member View</span>
+                    </button>
+                  </div>
+                </td>
+
+                <td style="white-space: nowrap; width: 1%;">
+                  <div   class="btn-group btn-group-sm" style="float: none;">
+                    <button type="button" (click)="view(profile.id)" class="tabledit-edit-button btn btn-success" style="float: none;">
+                      <span class="mdi mdi-pencil">View</span>
+                    </button>
+                  </div>
+                </td>
+
+                <!-- Edit Action -->
+                <td>
+                  <button type="button" (click)="edit(profile.id)" class="tabledit-edit-button btn btn-danger" style="float: none;">
+                    <i class="mdi mdi-delete">Edit</i>
+                  </button>
+                </td>
+
+                <!-- Delete Action -->
+                <td>
+                  <button type="button" (click)="delete(profile.id)" class="tabledit-edit-button btn btn-danger" style="float: none;">
+                    <i class="mdi mdi-delete">Delete</i>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
+
+          <!-- Head Section (only for head) -->
+<!--          <div *ngIf="isHead() && content.length > 0">-->
+<!--            <h3 class="mt-0 header-title uppercase"> Head Login Members List</h3><br>-->
+<!--            <table class="table table-bordered table-bordered dt-responsive nowrap">-->
+<!--              <thead>-->
+<!--              <tr>-->
+<!--                <th>#</th>-->
+<!--                <th>Email</th>-->
+<!--                <th>Username</th>-->
+<!--                <th>Status</th>-->
+<!--                <th>Role</th>-->
+<!--                <th>Show</th>-->
+<!--                <th>Edit</th>-->
+<!--                <th>Delete</th>-->
+<!--              </tr>-->
+<!--              </thead>-->
+<!--              <tbody>-->
+<!--              <tr *ngFor="let profile of getUsersByRoles(['ROLE_MEMBER_L1', 'ROLE_MEMBER_L2', 'ROLE_MEMBER_L3'])">-->
+<!--                <td>{{ profile.id }}</td>-->
+<!--                <td>{{ profile.email }}</td>-->
+<!--                <td>{{ profile.username }}</td>-->
+<!--                <td>{{ profile.status | uppercase}}</td>-->
+<!--                <td>{{ profile.roles?.[0]?.name  | uppercase }}</td>-->
+
+<!--                &lt;!&ndash; View Action &ndash;&gt;-->
+
+<!--&lt;!&ndash;                <td style="white-space: nowrap; width: 1%;">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <div class="btn-group btn-group-sm" style="float: none;">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <button type="button" (click)="view(profile.id)" class="tabledit-edit-button btn btn-success" style="float: none;">&ndash;&gt;-->
+<!--&lt;!&ndash;                      <span class="mdi mdi-pencil">Members</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--                <td style="white-space: nowrap; width: 1%;">-->
+<!--                  <div class="btn-group btn-group-sm" style="float: none;">-->
+<!--                    <button type="button" (click)="view(profile.id)" class="tabledit-edit-button btn btn-success" style="float: none;">-->
+<!--                      <span class="mdi mdi-pencil">View</span>-->
+<!--                    </button>-->
+<!--                  </div>-->
+<!--                </td>-->
+
+<!--                &lt;!&ndash; Edit Action &ndash;&gt;-->
+<!--                <td>-->
+<!--                  <button type="button" (click)="edit(profile.id)" class="tabledit-edit-button btn btn-danger" style="float: none;">-->
+<!--                    <i class="mdi mdi-delete">Edit</i>-->
+<!--                  </button>-->
+<!--                </td>-->
+
+<!--                &lt;!&ndash; Delete Action &ndash;&gt;-->
+<!--                <td>-->
+<!--                  <button type="button" (click)="delete(profile.id)" class="tabledit-edit-button btn btn-danger" style="float: none;">-->
+<!--                    <i class="mdi mdi-delete">Delete</i>-->
+<!--                  </button>-->
+<!--                </td>-->
+<!--              </tr>-->
+
+<!--              </tbody>-->
+<!--            </table>-->
+<!--          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

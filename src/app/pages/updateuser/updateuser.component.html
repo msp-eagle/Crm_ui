@@ -1,0 +1,255 @@
+
+<!--<div class="card custom-card headercard shadow-sm">-->
+<!--  <div class="d-flex align-items-center justify-content-between">-->
+<!--    &lt;!&ndash; Icon and Title &ndash;&gt;-->
+<!--    <div class="d-flex align-items-center" style="min-height: 73px">-->
+
+<!--<p style="text-align: center">User Registration</p>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Breadcrumb &ndash;&gt;-->
+<!--    <nav aria-label="breadcrumb">-->
+<!--      <ol class="breadcrumb mb-0">-->
+<!--        <li class="breadcrumb-item">-->
+<!--          <a class="text-decoration-none">-->
+<!--            <i class="bi bi-house-door-fill"></i>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--&lt;!&ndash;        <li class="breadcrumb-item"><a class="text-decoration-none">3</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="breadcrumb-item active" aria-current="page">opiopoip</li>&ndash;&gt;-->
+<!--      </ol>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<section class="section">-->
+<!--  <div class="row" style="margin-bottom: 70px;">-->
+<!--    <div class="col-lg-12">-->
+<!--      <div class="card custom-card section-card">-->
+
+
+<!--        <div class="card-body">-->
+
+<!--          <form  novalidate="">-->
+<!--            &lt;!&ndash; Step 1 &ndash;&gt;-->
+<!--            <div  class="needs-validation">-->
+<!--              <div formGroupName="userInformation">-->
+<!--                <div class="row mb-2">-->
+<!--                  <label for="validationCustom01" class="col-sm-2 col-form-label h5">GROUP NAME</label>-->
+<!--                  <div class="col-sm-7 position-relative">-->
+<!--                    <select class="form-select" id="validationCustom01" name="groupName"-->
+<!--                            formControlName="groupName" autocomplete="off"-->
+<!--                           >-->
+<!--                      <option value="" selected="" disabled="">SELECT GROUP NAME.....-->
+<!--                      </option>-->
+<!--                      <option></option>-->
+<!--                    </select>-->
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--                <div class="row mb-2">-->
+<!--                  <label for="titles" class="col-sm-2 col-form-label h5">TITLE-->
+<!--                  </label>-->
+<!--                  <div class="col-sm-7">-->
+<!--                    <select class="form-select" id="titles" name="titles" formControlName="titles"-->
+<!--                            autocomplete="off"-->
+<!--                            >-->
+<!--                      <option value="" selected="" disabled="">CHOOSE TITLE-->
+<!--                      </option>-->
+<!--                      <option >-->
+<!--                      </option>-->
+<!--                    </select>-->
+<!--                  </div>-->
+
+<!--                </div>-->
+
+
+<!--                &lt;!&ndash; First Name &ndash;&gt;-->
+<!--                <div class="row mb-2">-->
+<!--                  <label for="firstName" class="col-sm-2 col-form-label h5">FIRST NAME</label>-->
+<!--                  <div class="col-sm-7">-->
+<!--                    <input type="text" class="form-control" id="firstName" name="firstName"-->
+<!--                           placeholder="First Name" formControlName="firstName"-->
+<!--                           autocomplete="off"-->
+<!--                           >-->
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--                <div class="row mb-2">-->
+<!--                  <label for="middleName" class="col-sm-2 col-form-label h5">MIDDLE NAME</label>-->
+<!--                  <div class="col-sm-7">-->
+<!--                    <input type="text" class="form-control" id="middleName" name="middleName"-->
+<!--                           placeholder="Middle Name" formControlName="middleName"-->
+<!--                           autocomplete="off"-->
+<!--                           >-->
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Last Name &ndash;&gt;-->
+<!--                <div class="row mb-2">-->
+<!--                  <label for="lastName" class="col-sm-2 col-form-label h5">LAST NAME-->
+<!--                  <div class="col-sm-7">-->
+<!--                    <input type="text" class="form-control" id="lastName" name="lastName"-->
+<!--                           placeholder="Last Name" formControlName="lastName"-->
+<!--                           autocomplete="off"-->
+<!--                           >-->
+<!--                  </div>-->
+<!--                  </label>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div class="card custom-card headercard shadow-sm">
+  <div class="d-flex align-items-center justify-content-between">
+    <!-- Icon and Title -->
+    <div class="d-flex align-items-center" style="min-height: 73px">
+      <p style="text-align: center">User Registration</p>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a class="text-decoration-none">
+            <i class="bi bi-house-door-fill"></i>
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="row" style="margin-bottom: 70px;">
+    <div class="col-lg-12">
+      <div class="card custom-card section-card">
+        <div class="card-body">
+
+          <!-- Add the parent formGroup directive here -->
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="parsley-examples">
+            <div class="needs-validation">
+              <!-- Form controls go here -->
+
+                <!-- Name -->
+                <div class="row mb-2">
+                  <label for="name" class="col-sm-2 col-form-label h5">NAME</label>
+                  <div class="col-sm-7">
+                    <input type="text" id="name" formControlName="username" class="form-control" placeholder="Enter Name">
+                  </div>
+                  <div *ngIf="userForm.get('username')?.invalid && userForm.get('username')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">Name is required</span>
+                  </div>
+                </div>
+
+              <!-- Position -->
+              <div class="row mb-2">
+                <label class="col-sm-2 col-form-label h5">Last Name</label>
+                <div class="col-sm-7">
+                  <input type="text" id="lastname" formControlName="position" class="form-control" placeholder="Enter Position">
+                </div>
+                <div *ngIf="userForm.get('lastname')?.invalid && userForm.get('position')?.touched" class="col-sm-3">
+                  <span class="text-danger font-weight-bold">Position is required</span>
+                </div>
+              </div>
+
+
+              <!-- Email -->
+                <div class="row mb-2">
+                  <label for="email" class="col-sm-2 col-form-label h5">EMAIL</label>
+                  <div class="col-sm-7">
+                    <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter Email">
+                  </div>
+                  <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">Valid email is required</span>
+                  </div>
+                </div>
+
+
+                <!-- Phone -->
+                <div class="row mb-2">
+                  <label for="phone" class="col-sm-2 col-form-label h5">PHONE</label>
+                  <div class="col-sm-7">
+                    <input type="text" id="phone" formControlName="phone" class="form-control" placeholder="Enter Phone Number">
+                  </div>
+                  <div *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">Phone is required</span>
+                  </div>
+                </div>
+
+                <!-- Address -->
+                <div class="row mb-2">
+                  <label for="address" class="col-sm-2 col-form-label h5">ADDRESS</label>
+                  <div class="col-sm-7">
+                    <input type="text" id="address" formControlName="address" class="form-control" placeholder="Enter Address">
+                  </div>
+                  <div *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">Address is required</span>
+                  </div>
+                </div>
+
+                <!-- City -->
+                <div class="row mb-2">
+                  <label for="city" class="col-sm-2 col-form-label h5">CITY</label>
+                  <div class="col-sm-7">
+                    <input type="text" id="city" formControlName="city" class="form-control" placeholder="Enter City">
+                  </div>
+                  <div *ngIf="userForm.get('city')?.invalid && userForm.get('city')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">City is required</span>
+                  </div>
+                </div>
+
+                <!-- State -->
+                <div class="row mb-2">
+                  <label for="state" class="col-sm-2 col-form-label h5">STATE</label>
+                  <div class="col-sm-7">
+                    <input type="text" id="state" formControlName="state" class="form-control" placeholder="Enter State">
+                  </div>
+                  <div *ngIf="userForm.get('state')?.invalid && userForm.get('state')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">State is required</span>
+                  </div>
+                </div>
+
+                <!-- Country -->
+                <div class="row mb-2">
+                  <label for="country" class="col-sm-2 col-form-label h5">COUNTRY</label>
+                  <div class="col-sm-7">
+                    <input type="text" id="country" formControlName="country" class="form-control" placeholder="Enter Country">
+                  </div>
+                  <div *ngIf="userForm.get('country')?.invalid && userForm.get('country')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">Country is required</span>
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <div class="row mb-2">
+                  <label for="description" class="col-sm-2 col-form-label h5">INFORMATION</label>
+                  <div class="col-sm-7">
+                    <textarea class="form-control" id="description" rows="5" placeholder="Enter description..." formControlName="description"></textarea>
+                  </div>
+                  <div *ngIf="userForm.get('description')?.invalid && userForm.get('description')?.touched" class="col-sm-3">
+                    <span class="text-danger font-weight-bold">Description is required</span>
+                  </div>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="text-end">
+                  <button class="btn btn-primary waves-effect waves-light" type="submit">Submit</button>&nbsp;
+                  <button type="reset" class="btn btn-secondary waves-effect">Cancel</button>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

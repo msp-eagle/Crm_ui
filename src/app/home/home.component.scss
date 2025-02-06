@@ -56,10 +56,240 @@ img {
 .text-main {
   color: var(--color-main);
 }
+/*
+Sidebar
+*/
+.nav-list li a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #515151 !important;
+  color: #9d9d9d;
+}
+
+.nav-list > li > a {
+  color: #C4C4C4;
+  font-size: 14px;
+  padding-left: 13px !important;
+  border-bottom: 1px solid #585858;
+}
+
+.nav-list > li > a:hover {
+  background-color: #444444;
+}
+.sidebar {
+  width: 345px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 1rem 1.2rem;
+  transition: left 300ms;
+}
+.sidebar-container {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  //background-color: var(--main-accent);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+  overflow-y: auto;
+}
+.sidebar-container::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-container::-webkit-scrollbar-track {
+  box-shadow: var(--shadow);
+}
+.sidebar-container::-webkit-scrollbar-thumb {
+  background-color: var(--main-accent);
+  outline: 1px solid #ccc;
+  border-radius: 2px;
+}
+.brand {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand h3 {
+  color: #444;
+  font-size: 3rem;
+}
+.brand h3 span {
+  color: var(--color-main);
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.sidebar-avatar {
+  display: flex;
+  //grid-template-columns: auto;
+  align-items: center;
+  border: 2px solid var(--main-accent);
+  padding: 0.1rem 0.1rem;
+  border-radius: 7px;
+  margin: 2rem 0rem;
+  background-color: var(--main-accent);
+
+}
+.sidebar-avatar img {
+  width: 200px;
+  border-radius: 10px;
+  margin: 5px 0;
+  margin-left: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.avatar-info {
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //background-color: #292c6d;
+}
+
+
+.sidebar-menu li {
+  margin-bottom: 2rem;
+}
+
+.sidebar-menu a {
+  color: var(--main-text);
+  display: block;
+  padding: 0.7rem 0;
+}
+
+.sidebar-menu a.active {
+  background-color: var(--main-accent);
+  border-radius: 7px;
+  padding: 0.8rem;
+}
+
+.sidebar-menu a span:first-child {
+  display: inline-block;
+  margin-right: 0.8rem;
+  font-size: 1.5rem;
+  color: var(--color-main);
+}
+
+.sidebar-card {
+  background-color: var(--main-accent);
+  padding: 1rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border-radius: 7px;
+}
+
+.side-card-icon span {
+  font-size: 8rem;
+  color: var(--color-main);
+  display: inline-block;
+}
+
+.side-card-icon {
+  margin-bottom: 0.8rem;
+}
+
+.side-card-icon + div {
+  margin-bottom: 1rem;
+}
+
+.side-card-icon + div p {
+  font-size: 0.8rem;
+  color: #555;
+}
+#column_left {
+  background-color: #515151;
+}
+.submenu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;  /* Center the list vertically */
+}
+
+.submenu-item {
+  color: var(--main-text);
+  display: block;
+  padding: 0.7rem 0;
+  width: 100%;
+  //padding: 10px 20px;  /* Adjust padding as per need */
+  margin: 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  //display: block;  /* Ensures the span behaves like a block element */
+  border-radius: 4px;  /* Optional: Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.submenu-item:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+.submenu-item.active {
+  background-color: var(--main-accent);
+  border-radius: 7px;
+  padding: 0.8rem;
+  //color: white; /* Active item text color */
+}
+.submenu-item li span{
+  width: 100%;
+}
 
 
 
-
+//.sidebar-menu li {
+//  margin-bottom: 2rem;
+//}
+//.sidebar-menu a {
+//  color: var(--main-text);
+//  display: block;
+//  padding: 0.7rem 0;
+//}
+//.sidebar-menu a.active {
+//  background-color: var(--main-accent);
+//  border-radius: 7px;
+//  padding: 0.8rem;
+//}
+//.sidebar-menu a span:first-child {
+//  display: inline-block;
+//  margin-right: 0.8rem;
+//  font-size: 1.5rem;
+//  color: var(--color-main);
+//}
+//.sidebar-card {
+//  background-color: var(--main-accent);
+//  padding: 1rem;
+//  margin-top: 2rem;
+//  box-shadow: var(--shadow);
+//  text-align: center;
+//  border-radius: 7px;
+//}
+//.side-card-icon span {
+//  font-size: 8rem;
+//  color: var(--color-main);
+//  display: inline-block;
+//}
+//.side-card-icon {
+//  margin-bottom: 0.8rem;
+//}
+//.side-card-icon + div {
+//  margin-bottom: 1rem;
+//}
+//.side-card-icon + div p {
+//  font-size: 0.8rem;
+//  color: #555;
+//}
 .btn {
   padding: 0.7rem 1rem;
   border: none;
@@ -127,73 +357,7 @@ header {
 main {
   padding: 2.5rem 0;
 }
-.analytics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-.analytic {
-  box-shadow: var(--shadow);
-  padding: 1.5rem;
-  border-radius: 10px;
-  display: flex;
-  padding-left: 2rem;
-}
-.analytic-info h4 {
-  font-weight: 400;
-  color: white;
-  font-size: 0.98rem;
-}
-.analytic-info h1 {
-  color: var(--main-text);
-  font-weight: 600;
-}
-.analytic-info h1 small {
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-.analytic:first-child  {
-  background-color: forestgreen;
-  color: white;
-}
-.analytic:nth-child(2)  {
-  background-color: orangered;
-  color: white;
-}
-.analytic:nth-child(3)  {
-  background-color: dodgerblue;
-  color: white;
-}
-.analytic:nth-child(4)  {
-  background-color: red;
-  color: white;
-}
-.analytic:first-child .analytic-icon {
-  background-color: #dce5ff;
-  color: blue;
-}
-.analytic:nth-child(2) .analytic-icon {
-  background-color: #ebf7f5;
 
-  color: #2ec3a3;
-}
-.analytic:nth-child(3) .analytic-icon {
-  background-color: #ebf7f5;
-  color: red;
-}
-.analytic:nth-child(4) .analytic-icon {
-  background-color: var(--main-accent);
-  color: #0cd73c;
-}
-.analytic-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  margin-right: 0.8rem;
-}
 .section-head {
   font-size: 1.4rem;
   color: var(--main);
@@ -264,19 +428,6 @@ main {
   place-items: center;
   font-size: 1.2rem;
   margin-right: 0.8rem;
-}
-.graph-head select {
-  outline: none;
-  background-color: #eee;
-  height: 35px;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  border: none;
-}
-.overlay label {
-  display: block;
-  height: 100%;
-  width: 100%;
 }
 @media only screen and (max-width: 1224px) {
   .sidebar {

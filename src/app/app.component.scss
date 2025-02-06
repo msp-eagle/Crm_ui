@@ -357,73 +357,7 @@ header {
 main {
   padding: 2.5rem 0;
 }
-.analytics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2.5rem;
-  margin-bottom: 3rem;
-}
-.analytic {
-  box-shadow: var(--shadow);
-  padding: 1.5rem;
-  border-radius: 10px;
-  display: flex;
-  padding-left: 2rem;
-}
-.analytic-info h4 {
-  font-weight: 400;
-  color: white;
-  font-size: 0.98rem;
-}
-.analytic-info h1 {
-  color: var(--main-text);
-  font-weight: 600;
-}
-.analytic-info h1 small {
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-.analytic:first-child  {
-  background-color: forestgreen;
-  color: white;
-}
-.analytic:nth-child(2)  {
-  background-color: orangered;
-  color: white;
-}
-.analytic:nth-child(3)  {
-  background-color: dodgerblue;
-  color: white;
-}
-.analytic:nth-child(4)  {
-  background-color: red;
-  color: white;
-}
-.analytic:first-child .analytic-icon {
-  background-color: #dce5ff;
-  color: blue;
-}
-.analytic:nth-child(2) .analytic-icon {
-  background-color: #ebf7f5;
 
-  color: #2ec3a3;
-}
-.analytic:nth-child(3) .analytic-icon {
-  background-color: #ebf7f5;
-  color: red;
-}
-.analytic:nth-child(4) .analytic-icon {
-  background-color: var(--main-accent);
-  color: #0cd73c;
-}
-.analytic-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  margin-right: 0.8rem;
-}
 .section-head {
   font-size: 1.4rem;
   color: var(--main);
@@ -494,19 +428,6 @@ main {
   place-items: center;
   font-size: 1.2rem;
   margin-right: 0.8rem;
-}
-.graph-head select {
-  outline: none;
-  background-color: #eee;
-  height: 35px;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  border: none;
-}
-.overlay label {
-  display: block;
-  height: 100%;
-  width: 100%;
 }
 @media only screen and (max-width: 1224px) {
   .sidebar {
